@@ -46,15 +46,8 @@
             this.dtEBooking = new DevExpress.XtraEditors.DateEdit();
             this.groupControlL = new DevExpress.XtraEditors.GroupControl();
             this.dataLeft = new System.Windows.Forms.DataGridView();
-            this.CarPlatNumberLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TypeNameLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PriceLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupControlR = new DevExpress.XtraEditors.GroupControl();
             this.dataRight = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BookingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRight = new DevExpress.XtraEditors.SimpleButton();
             this.btnLeft = new DevExpress.XtraEditors.SimpleButton();
             this.txtTotalPrice = new DevExpress.XtraEditors.TextEdit();
@@ -66,6 +59,13 @@
             this.btnSaveBooking = new DevExpress.XtraEditors.SimpleButton();
             this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.CarPlatNumberLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeNameLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PriceLeft = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtBookingId.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIdentity_Number.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCustomerId.Properties)).BeginInit();
@@ -277,24 +277,6 @@
             this.dataLeft.Size = new System.Drawing.Size(480, 213);
             this.dataLeft.TabIndex = 84;
             // 
-            // CarPlatNumberLeft
-            // 
-            this.CarPlatNumberLeft.DataPropertyName = "platnumber";
-            this.CarPlatNumberLeft.HeaderText = "CarPlatNumber";
-            this.CarPlatNumberLeft.Name = "CarPlatNumberLeft";
-            // 
-            // TypeNameLeft
-            // 
-            this.TypeNameLeft.DataPropertyName = "TypeName";
-            this.TypeNameLeft.HeaderText = "TypeName";
-            this.TypeNameLeft.Name = "TypeNameLeft";
-            // 
-            // PriceLeft
-            // 
-            this.PriceLeft.DataPropertyName = "Price";
-            this.PriceLeft.HeaderText = "Price";
-            this.PriceLeft.Name = "PriceLeft";
-            // 
             // groupControlR
             // 
             this.groupControlR.Controls.Add(this.dataRight);
@@ -320,29 +302,6 @@
             this.dataRight.Name = "dataRight";
             this.dataRight.Size = new System.Drawing.Size(488, 213);
             this.dataRight.TabIndex = 83;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CarPlatNumber";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CarPlatNumber";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "TypeName";
-            this.dataGridViewTextBoxColumn2.HeaderText = "TypeName";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // BookingID
-            // 
-            this.BookingID.HeaderText = "BookingID";
-            this.BookingID.Name = "BookingID";
             // 
             // btnRight
             // 
@@ -445,6 +404,47 @@
             this.groupControl1.Text = "Booking";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
+            // CarPlatNumberLeft
+            // 
+            this.CarPlatNumberLeft.DataPropertyName = "platnumber";
+            this.CarPlatNumberLeft.HeaderText = "CarPlatNumber";
+            this.CarPlatNumberLeft.Name = "CarPlatNumberLeft";
+            // 
+            // TypeNameLeft
+            // 
+            this.TypeNameLeft.DataPropertyName = "typename";
+            this.TypeNameLeft.HeaderText = "TypeName";
+            this.TypeNameLeft.Name = "TypeNameLeft";
+            // 
+            // PriceLeft
+            // 
+            this.PriceLeft.DataPropertyName = "price";
+            this.PriceLeft.HeaderText = "Price";
+            this.PriceLeft.Name = "PriceLeft";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "platnumber";
+            this.dataGridViewTextBoxColumn1.HeaderText = "CarPlatNumber";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "typename";
+            this.dataGridViewTextBoxColumn2.HeaderText = "TypeName";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "price";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // BookingID
+            // 
+            this.BookingID.HeaderText = "BookingID";
+            this.BookingID.Name = "BookingID";
+            // 
             // UCBooking
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -532,12 +532,12 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.DataGridView dataLeft;
         private System.Windows.Forms.DataGridView dataRight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CarPlatNumberLeft;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeNameLeft;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PriceLeft;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CarPlatNumberLeft;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TypeNameLeft;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PriceLeft;
     }
 }

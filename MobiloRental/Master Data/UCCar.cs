@@ -352,6 +352,7 @@ namespace MobiloRental.Master_Data
                         oObject.SoftDelete();
                         oObject = null;
                         gridViewData.DeleteSelectedRows();
+                        XtraMessageBox.Show(this, "Record Successfully Deleted", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (NpgsqlException ex)

@@ -12,6 +12,7 @@ using Library;
 using Npgsql;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraGrid.Views.Grid;
+using System.IO;
 
 namespace MobiloRental.Report
 {
@@ -65,6 +66,7 @@ namespace MobiloRental.Report
             //Clear();
             loadData();
             //fillCombo();
+            dgData.Columns["dtreturn"].DefaultCellStyle.Format = "dd MMMM yyyy";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -148,8 +150,10 @@ namespace MobiloRental.Report
 
         private void button4_Click(object sender, EventArgs e)
         {
+            dgData.Columns["dtreturn"].DefaultCellStyle.Format = "dd MMMM yyyy";
             Microsoft.Office.Interop.Excel.Application excel = new Microsoft.Office.Interop.Excel.Application();
             Microsoft.Office.Interop.Excel.Workbook workbook = excel.Workbooks.Add(Type.Missing);
+
             for (int i = 1; i < dgData.ColumnCount + 1; i++)
             {
                 excel.Cells[1, i] = dgData.Columns[i - 1].HeaderText;
@@ -164,20 +168,28 @@ namespace MobiloRental.Report
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.Filter = "Excel Files|.*xlsx";
             sfd.FilterIndex = 1;
-            sfd.FileName = "MBR_Return_" + DateTime.Now.ToString("ddMMMMyyyy");
-            if (sfd.ShowDialog() == DialogResult.OK)
+            string filepath = "MBR_Return_" + DateTime.Now.ToString("ddMMMMyyyy");
+         
+            sfd.FileName = filepath;
+            if (sfd.CheckFileExists)
             {
-                workbook.SaveAs(sfd.FileName);
-                excel.Quit();
-                workbook = null;
-                excel = null;
-                MessageBox.Show("Data Exported", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("File name already exist", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                excel.Quit();
-                workbook = null;
-                excel = null;
+            else {
+                if (sfd.ShowDialog() == DialogResult.OK)
+                {
+                    workbook.SaveAs(sfd.FileName);
+                    excel.Quit();
+                    workbook = null;
+                    excel = null;
+                    XtraMessageBox.Show(this, "Record Successfully Exported", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    excel.Quit();
+                    workbook = null;
+                    excel = null;
+                }
             }
         }
     }

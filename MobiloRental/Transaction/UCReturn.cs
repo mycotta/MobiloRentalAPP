@@ -148,7 +148,7 @@ namespace MobiloRental.Transaction
                         txtName.Text = dtData.Rows[0]["name"].ToString();
                         txtIdentity.Text = dtData.Rows[0]["identity_number"].ToString();
                         int sum = 0;
-                        for (int i = 0; i < dtData.Rows.Count; i++)
+                        for (int i = 0; i < dgData.Rows.Count; i++)
                         {
                             sum += Convert.ToInt32(dgData.Rows[i].Cells["price"].Value);
                         }
@@ -240,6 +240,7 @@ namespace MobiloRental.Transaction
                         oObject.paymentamount = Convert.ToDecimal(txtPayment.Text);
                         oObject.opadd = clsGlobal.strUserName;
                         oObject.pcadd = SystemInformation.ComputerName;
+                        oObject.luadd = DateTime.Now;
                         oObject.Insert();
                        
                         for (int i = 0; i < dgData.Rows.Count; i++)
@@ -256,7 +257,7 @@ namespace MobiloRental.Transaction
                             oObject1.updateAv();
                         }
                         clear();
-                        MessageBox.Show("Data Submitted", "Submit", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        XtraMessageBox.Show(this, "Record Successfully Saved", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
                 }

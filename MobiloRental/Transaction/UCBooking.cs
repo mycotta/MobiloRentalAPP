@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using Library;
 using Npgsql;
+using DevExpress.XtraEditors;
 
 namespace MobiloRental.Transaction
 {
@@ -67,7 +68,7 @@ namespace MobiloRental.Transaction
                     //dataLeft.DataSource = dtData;
                     foreach (DataRow row in dtData.Rows)
                     {
-                        dataLeft.Rows.Add(row["platnumber"].ToString(), row["platnumber"].ToString(), row["price"]);
+                        dataLeft.Rows.Add(row["platnumber"].ToString(), row["typename"].ToString(), row["price"]);
                     }
                     //gridViewData.Columns[1].ColumnEdit = ricmbCarType;
 
@@ -368,7 +369,7 @@ namespace MobiloRental.Transaction
                                 #endregion tbm_carid
 
                                 Refresh();
-                                MessageBox.Show("Data Saved", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                XtraMessageBox.Show(this, "Record Successfully Saved", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                             }
                         }
                     }

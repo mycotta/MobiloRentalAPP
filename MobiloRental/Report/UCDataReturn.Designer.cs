@@ -45,7 +45,7 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.ReturnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BookingID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DateTimeReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dtreturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RemainingPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PenaltyPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentAmmoutn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +81,7 @@
             this.dgData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ReturnID,
             this.BookingID,
-            this.DateTimeReturn,
+            this.dtreturn,
             this.RemainingPayment,
             this.PenaltyPayment,
             this.PaymentAmmoutn});
@@ -220,11 +220,11 @@
             this.BookingID.HeaderText = "BookingID";
             this.BookingID.Name = "BookingID";
             // 
-            // DateTimeReturn
+            // dtreturn
             // 
-            this.DateTimeReturn.DataPropertyName = "dtreturn";
-            this.DateTimeReturn.HeaderText = "DateTimeReturn";
-            this.DateTimeReturn.Name = "DateTimeReturn";
+            this.dtreturn.DataPropertyName = "dtreturn";
+            this.dtreturn.HeaderText = "DateTimeReturn";
+            this.dtreturn.Name = "dtreturn";
             // 
             // RemainingPayment
             // 
@@ -291,7 +291,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReturnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn BookingID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DateTimeReturn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dtreturn;
         private System.Windows.Forms.DataGridViewTextBoxColumn RemainingPayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn PenaltyPayment;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentAmmoutn;

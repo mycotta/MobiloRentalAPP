@@ -111,6 +111,7 @@ namespace MobiloRental
             btnEdit.Enabled = clsGlobal.bolAdd || clsGlobal.bolEdit;
             btnEndEdit.Enabled = false;
             btnDelete.Enabled = clsGlobal.bolDelete;
+            XtraMessageBox.Show(this, "Record Successfully Saved", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -131,6 +132,7 @@ namespace MobiloRental
                         oObject.SoftDelete();
                         oObject = null;
                         gridViewData.DeleteSelectedRows();
+                        XtraMessageBox.Show(this, "Record Successfully Deleted", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (NpgsqlException ex)

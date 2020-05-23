@@ -155,7 +155,7 @@ namespace MobiloRental.Report
                 excel.Quit();
                 workbook = null;
                 excel = null;
-                MessageBox.Show("Data Exported", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                XtraMessageBox.Show(this, "Record Successfully Exported", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -163,6 +163,7 @@ namespace MobiloRental.Report
                 workbook = null;
                 excel = null;
             }
+
         }
 
         private void dgData_Click(object sender, EventArgs e)

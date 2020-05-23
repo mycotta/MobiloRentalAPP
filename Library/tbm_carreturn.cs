@@ -137,7 +137,7 @@ namespace Library
             }
             else
             {
-                cmd.Parameters.Add("@pp", NpgsqlTypes.NpgsqlDbType.Numeric).Value = DBNull.Value;
+                cmd.Parameters.Add("@pp", NpgsqlTypes.NpgsqlDbType.Numeric).Value = 0;
             }
             if (paymentamount != 0)
             {

@@ -187,6 +187,19 @@ namespace MobiloRental.Transaction
                             {
                                 oObject.GetByPrimaryKey(strRepairid);
                             }
+
+                            tbm_car oObject1 = new tbm_car();
+                            oConn.Open();
+                            oObject1.Koneksi = oConn.Conn;
+                            oObject1.carid = "Example";
+                            oObject1.platnumber = cmbPlatnumber.Text;
+                            oObject1.available = false;
+                            oObject1.pcedit = SystemInformation.ComputerName;
+                            oObject1.opedit = clsGlobal.strUserName;
+                            oObject1.luedit = DateTime.Now;
+                            oObject1.updateAv();
+
+
                             oObject.repairid = strRepairid;
                             oObject.carid = strGetCarid;
 
@@ -199,12 +212,12 @@ namespace MobiloRental.Transaction
                                     oObject.repairid = strRepairid;
                                     oObject.opadd = clsGlobal.strUserName;
                                     oObject.pcadd = SystemInformation.ComputerName;
-                                oObject.luadd = DateTime.Now;
+                                    oObject.luadd = DateTime.Now;
                                     oObject.Insert();
                                     Clear();
                                     loadData();
-                                    MessageBox.Show("Data Inserted", "Insert", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                    oObject = null;
+                                XtraMessageBox.Show(this, "Record Successfully Saved", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                oObject = null;
                             }
 
                         }
@@ -216,11 +229,9 @@ namespace MobiloRental.Transaction
                 }
                 catch (NpgsqlException ex)
                 {
-                    ////clsGlobal.generateErrMessageAndSendmail(ex, false);
                 }
                 catch (Exception ex)
                 {
-                    ////clsGlobal.generateErrMessageAndSendmail(ex, false);
 
                 }
             }
@@ -235,6 +246,17 @@ namespace MobiloRental.Transaction
                     using (clsConnection oConn = new clsConnection())
                     {
                         frmMain.setLoadDialog(true, "Deleting data...");
+                        tbm_car oObject1 = new tbm_car();
+                        oConn.Open();
+                        oObject1.Koneksi = oConn.Conn;
+                        oObject1.carid = "Example";
+                        oObject1.platnumber = Convert.ToString(dgData.CurrentRow.Cells["platnumber"].Value.ToString());
+                        oObject1.available = true;
+                        oObject1.pcedit = SystemInformation.ComputerName;
+                        oObject1.opedit = clsGlobal.strUserName;
+                        oObject1.luedit = DateTime.Now;
+                        oObject1.updateAv();
+
                         tbm_carrepair oObject = new tbm_carrepair();
                         oConn.Open();
                         oObject.Koneksi = oConn.Conn;
@@ -243,7 +265,8 @@ namespace MobiloRental.Transaction
                         oObject.pcedit = SystemInformation.ComputerName;
                         oObject.Delete();
                         oObject = null;
-        
+                        XtraMessageBox.Show(this, "Record Successfully Deleted", clsGlobal.pstrAppName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                     }
                 }
                 catch (NpgsqlException ex)

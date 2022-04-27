@@ -38,7 +38,7 @@ Port        : 5432
 4. Lalu Test Connection, Dan Bila berhasil cari database db_mobilorental dan klik Connect To Server
         
  Dan diatas adalah cara untuk menggunakannya, bila ada pertanyaan lebih lanjut, ataupun terdapat bug, mohon kontak saya dibawah ini
- Facebook : [Crzn1](https://facebook.com/mycotta).[Crzn1](https://facebook.com/404corazon)
+ Facebook : 
 
  Free Car Rental Management System using C# Language and PostgreSQL Database
  
